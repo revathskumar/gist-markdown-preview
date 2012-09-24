@@ -1,0 +1,28 @@
+{
+  "name":"Gist Markdown Preview",
+  "version":"1.0",
+  "description":"helps to preview the markdown while creating a markdown gist",
+  "manifest_version": 2,
+  "icons":{
+    "16":"img/gist16.png",
+    "48":"img/gist48.png",
+    "128":"img/gist128.png"
+  },
+  "homepage_url":"http://blog.revathskumar.com",
+  "content_scripts": [{
+    "matches": [
+      "https://gist.github.com/",
+      "https://gist.github.com/gists/*/edit"
+    ],
+    "css": ["css/gist.css"],
+    "js": [
+      "js/jquery.min.js",
+      "gist_markdown_preview.js",
+      "js/jquery.markdown.js"
+    ],
+    "run_at": "document_start"
+  }],
+  "permissions": [
+    "https://gist.github.com/"
+  ]
+}
