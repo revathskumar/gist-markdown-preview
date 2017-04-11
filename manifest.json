@@ -1,6 +1,6 @@
 {
   "name":"Gist Markdown Preview",
-  "version":"1.0.2",
+  "version":"1.0.3",
   "description":"helps to preview the markdown while creating a markdown gist",
   "manifest_version": 2,
   "icons":{
@@ -8,7 +8,7 @@
     "48":"img/gist48.png",
     "128":"img/gist128.png"
   },
-  "homepage_url":"http://blog.revathskumar.com",
+  "homepage_url":"https://github.com/revathskumar/gist-markdown-preview",
   "content_scripts": [{
     "matches": [
       "https://gist.github.com/",
