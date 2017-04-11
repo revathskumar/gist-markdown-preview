@@ -1,16 +1,16 @@
 function preview(e){
   e.preventDefault();
   e.stopPropagation();
-  if($(".ace_editor").is(":visible")){
-    $(".ace_editor").hide();
+  if($(".commit-create").is(":visible")){
+    $(".commit-create").hide();
     $("#readme article").show();
     $("#gist-preview span").html("Edit");
   } else {
     $("#readme article").hide();
-    $(".ace_editor").show();
+    $(".commit-create").show();
     $("#gist-preview span").html("Preview");
   }
-  $("#readme article").html($.markdown($(".input > textarea").val()));
+  $("#readme article").html($.markdown($(".commit-create > textarea").val()));
   return false;
 }
 
@@ -32,16 +32,16 @@ function appendHtml(e){
   if(!isMarkdown){
     $("#readme").remove();
     $("#gist-preview span").parent().remove();
-    $(".ace_editor").show();
+    $(".commit-create").show();
     return;
   }
 
   preview_area = $('<div class="blob instapaper_body" id="readme"><article class="markdown-body entry-content" itemprop="mainContentOfPage"></article>');
-  $(".ace_editor").parent().append(preview_area);
-  $(".form-actions").append("<button type='button' class='classy' id='gist-preview'><span>Preview</span></button>");
+  $(".commit-create").parent().append(preview_area);
+  $(".form-actions").append("<button type='button' class='btn' id='gist-preview'><span>Preview</span></button>");
 }
 
 jQuery(function($){
   $("#gist-preview").live("click",preview);
-  $(".gist-name-textbox").live("change", appendHtml);
+  $(".js-gist-filename").live("change", appendHtml);
 });
