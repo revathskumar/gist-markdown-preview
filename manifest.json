@@ -14,7 +14,6 @@
       "https://gist.github.com/",
       "https://gist.github.com/gists/*/edit"
     ],
-    "css": ["css/gist.css"],
     "js": [
       "js/jquery.min.js",
       "gist_markdown_preview.js",

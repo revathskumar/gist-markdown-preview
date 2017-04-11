@@ -38,7 +38,9 @@ function appendHtml(e){
 
   preview_area = $('<div class="blob instapaper_body" id="readme"><article class="markdown-body entry-content" itemprop="mainContentOfPage"></article>');
   $(".commit-create").parent().append(preview_area);
-  $(".form-actions").append("<button type='button' class='btn' id='gist-preview'><span>Preview</span></button>");
+  if($('#gist-preview').length === 0) {
+    $(".form-actions").append("<button type='button' class='btn' id='gist-preview'><span>Preview</span></button>");
+  }
 }
 
 jQuery(function($){
