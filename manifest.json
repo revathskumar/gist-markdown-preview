@@ -15,9 +15,8 @@
       "https://gist.github.com/gists/*/edit"
     ],
     "js": [
-      "js/jquery.min.js",
-      "gist_markdown_preview.js",
-      "js/jquery.markdown.js"
+      "js/marked.js",
+      "gist_markdown_preview.js"
     ],
     "run_at": "document_start"
   }],
