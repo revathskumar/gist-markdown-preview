@@ -1,6 +1,6 @@
 {
   "name":"Gist Markdown Preview",
-  "version":"1.0.4",
+  "version":"2.0.1",
   "description":"helps to preview the markdown while creating a markdown gist",
   "manifest_version": 2,
   "icons":{
@@ -12,7 +12,7 @@
   "content_scripts": [{
     "matches": [
       "https://gist.github.com/",
-      "https://gist.github.com/gists/*/edit"
+      "https://gist.github.com/*/*/edit"
     ],
     "js": [
       "js/marked.js",
