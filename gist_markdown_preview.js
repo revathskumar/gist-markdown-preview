@@ -34,7 +34,8 @@ const renderPreviewArea = (value, cqs) => {
   }
 
   const previewArea = d.createElement('div');
-  previewArea.classList.add('js-gist-preview');
+  previewArea.classList.add('js-gist-preview', 'markdown-body', 'entry-content');
+  previewArea.setAttribute("style", "padding: 45px;width: 100%;min-height: 362px;display:none");
   placeHolder.appendChild(previewArea);
 }
 
@@ -72,11 +73,17 @@ const createPreviewBtn = () => {
 
 const setup = gistHolder => {
   const cqs = gistHolder.querySelector.bind(gistHolder);
-  cqs('.js-gist-filename')
-    .addEventListener('change', e => {
-      renderPreviewButton(e.target.value, cqs);
-      renderPreviewArea(e.target.value, cqs);
-    });
+  const fileNameInput = cqs('.js-gist-filename')
+  fileNameInput.addEventListener('change', e => {
+    renderPreviewButton(e.target.value, cqs);
+    renderPreviewArea(e.target.value, cqs);
+  });
+  if(isMarkdown(fileNameInput.value)) {
+    const event = d.createEvent("HTMLEvents");
+    event.initEvent("change", false, true);
+    event.synthetic = true;
+    fileNameInput.dispatchEvent(event, true);
+  }
 }
 
 d.addEventListener('DOMContentLoaded', evt => {
