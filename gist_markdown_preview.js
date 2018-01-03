@@ -5,7 +5,7 @@ const byId = d.getElementById.bind(d);
 
 const togglePreview = cqs => {
   const article = cqs('.js-gist-preview');
-  const editor  = cqs('.cm-s-github');
+  const editor  = cqs('.CodeMirror');
   const previewBtn = cqs('.js-gist-preview-btn');
 
   if (editor.style.display === 'none') {
