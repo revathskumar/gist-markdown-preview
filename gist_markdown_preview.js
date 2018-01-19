@@ -17,7 +17,7 @@ const togglePreview = cqs => {
     article.style.display = "inline-block";
     previewBtn.innerHTML = "Edit";
   }
-  article.innerHTML = marked(cqs(".commit-create > textarea").value, { sanitize: true });
+  article.innerHTML = marked(cqs(".commit-create > textarea").value, { sanitize: false, gfm: true, tables: true, breaks:true });
 };
 
 const renderPreviewArea = (value, cqs) => {
